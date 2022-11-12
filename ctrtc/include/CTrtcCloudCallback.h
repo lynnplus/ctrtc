@@ -34,7 +34,7 @@ typedef void(*TrtcCBRemoteUserLeaveRoomFunc) (void* ctx,const char *userId,int r
 typedef void(*TrtcCBSendFirstLocalVideoFrameFunc) (void* ctx,int streamType);
 typedef void(*TrtcCBSendFirstLocalAudioFrameFunc) (void* ctx);
 
-typedef void(*TrtcCBConnectionLostFrameFunc) (void* ctx);
+typedef void(*TrtcCBConnectionLostFunc) (void* ctx);
 typedef void(*TrtcCBTryToReconnectFunc) (void* ctx);
 typedef void(*TrtcCBConnectionRecoveryFunc) (void* ctx);
 
@@ -52,7 +52,7 @@ typedef struct {
     TrtcCBRemoteUserLeaveRoomFunc onRemoteUserLeaveRoom;
     TrtcCBSendFirstLocalVideoFrameFunc onSendFirstLocalVideoFrame;
     TrtcCBSendFirstLocalAudioFrameFunc onSendFirstLocalAudioFrame;
-    TrtcCBConnectionLostFrameFunc onConnectionLost;
+    TrtcCBConnectionLostFunc onConnectionLost;
     TrtcCBTryToReconnectFunc onTryToReconnect;
     TrtcCBConnectionRecoveryFunc onConnectionRecovery;
 

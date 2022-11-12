@@ -16,3 +16,22 @@
 
 
 #include "CTrtcCloudCallback.h"
+#include "TrtcCallbackImpl.h"
+
+CTrtcCloudCallback* createTrtcCallback(void* ctx){
+    auto* cb=new CTrtcCloudCallback();
+    cb->proxy=new TrtcCallbackImpl(cb);
+    cb->ctx=ctx;
+    return cb;
+}
+
+void destroyTrtcCallback(CTrtcCloudCallback* cb){
+    if(cb== nullptr){
+        return;
+    }
+    if(cb->proxy){
+        delete static_cast<ITRTCCloudCallback *>(cb->proxy);
+    }
+    cb->ctx= nullptr;
+    delete cb;
+}

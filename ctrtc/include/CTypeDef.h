@@ -24,6 +24,7 @@ extern "C"{
 #endif
 
 #include <stdint.h>
+#include <stdbool.h>
 
 
 #ifdef API_EXPORTS
@@ -81,7 +82,7 @@ typedef enum {
 
 
 typedef struct {
-    uintptr_t sdkAppId;
+    uint64_t sdkAppId;
     const char *userId;
     const char *userSig;
 

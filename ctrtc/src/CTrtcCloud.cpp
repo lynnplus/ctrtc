@@ -18,7 +18,6 @@
 
 #include "CTrtcCloud.h"
 #include "ITRTCCloud.h"
-#include "TrtcCallbackImpl.h"
 
 CTrtcCloud getTrtcGlobalShareInstance(){
     ITRTCCloud* cloud=getTRTCShareInstance();
