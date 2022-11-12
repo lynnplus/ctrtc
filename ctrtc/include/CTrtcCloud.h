@@ -19,12 +19,11 @@
 #define CTRTC_CTRTCCLOUD_H
 
 
-
 #include "CTypeDef.h"
 #include "CTrtcCloudCallback.h"
 
 #ifdef __cplusplus
-extern "C"{
+extern "C" {
 #endif
 
 #include <stdbool.h>
@@ -39,18 +38,18 @@ API void destroyTrtcGlobalShareInstance();
 API CTrtcCloud createTrtcSubCloud();
 API void destroyTrtcSubCloud(CTrtcCloud obj);
 
-API void addTrtcCallback(CTrtcCloud obj,CTrtcCloudCallback* callback);
-API void removeTrtcCallback(CTrtcCloud obj,CTrtcCloudCallback* callback);
+API void addTrtcCallback(CTrtcCloud obj, CTrtcCloudCallback *callback);
+API void removeTrtcCallback(CTrtcCloud obj, CTrtcCloudCallback *callback);
 
-API void setTrtcVideoEncoderParam(CTrtcCloud obj, CTRTCVideoEncParam* param);
+API void setTrtcVideoEncoderParam(CTrtcCloud obj, CTRTCVideoEncParam *param);
 
-API const char* getTrtcSDKVersion(CTrtcCloud obj);
-API void setTrtcConsoleEnabled(CTrtcCloud obj,bool enable);
-API void setTrtcLogCompressEnabled(CTrtcCloud obj,bool enable);
-API void setTrtcLogDirPath(CTrtcCloud obj,const char* path);
-API void setTrtcLogLevel(CTrtcCloud obj,CTRTCLogLevel level);
+API const char *getTrtcSDKVersion(CTrtcCloud obj);
+API void setTrtcConsoleEnabled(CTrtcCloud obj, bool enable);
+API void setTrtcLogCompressEnabled(CTrtcCloud obj, bool enable);
+API void setTrtcLogDirPath(CTrtcCloud obj, const char *path);
+API void setTrtcLogLevel(CTrtcCloud obj, CTRTCLogLevel level);
 
-API void enterTrtcRoom(CTrtcCloud obj,const CTRTCParams* param, CTRTCAppScene scene);
+API void enterTrtcRoom(CTrtcCloud obj, const CTRTCParams *param, CTRTCAppScene scene);
 API void exitTrtcRoom(CTrtcCloud obj);
 API void setTrtcDefaultStreamRecvMode(CTrtcCloud obj, bool autoRecvAudio, bool autoRecvVideo);
 
@@ -60,11 +59,12 @@ API void enableTrtcCustomAudioCapture(CTrtcCloud obj, bool enable);
 API uint64_t generateTrtcCustomPTS(CTrtcCloud obj);
 
 
-API void sendTrtcCustomVideoData(CTrtcCloud obj,CTRTCVideoStreamType streamType,int width,int height,char* i420Buffer,int length,uint64_t timestamp,CTRTCVideoRotation rotation);
+API void
+sendTrtcCustomVideoData(CTrtcCloud obj, CTRTCVideoStreamType streamType, int width, int height, char *i420Buffer,
+                        int length, uint64_t timestamp, CTRTCVideoRotation rotation);
 
-API void muteTrtcLocalVideo(CTrtcCloud obj,CTRTCVideoStreamType streamType, bool mute);
-API void muteTrtcLocalAudio(CTrtcCloud obj,bool mute);
-
+API void muteTrtcLocalVideo(CTrtcCloud obj, CTRTCVideoStreamType streamType, bool mute);
+API void muteTrtcLocalAudio(CTrtcCloud obj, bool mute);
 
 
 #ifdef __cplusplus

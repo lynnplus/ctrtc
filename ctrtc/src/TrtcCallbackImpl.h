@@ -24,7 +24,7 @@
 #include "TRTCCloudCallback.h"
 #include "CTrtcCloudCallback.h"
 
-class TrtcCallbackImpl:public ITRTCCloudCallback {
+class TrtcCallbackImpl : public ITRTCCloudCallback {
 
 public:
     explicit TrtcCallbackImpl(const CTrtcCloudCallback *callback);
@@ -32,7 +32,7 @@ public:
     ~TrtcCallbackImpl() override;
 
 private:
-    const CTrtcCloudCallback* callback;
+    const CTrtcCloudCallback *callback;
 
 public:
     void onError(TXLiteAVError errCode, const char *errMsg, void *extraInfo) override;
@@ -57,7 +57,6 @@ public:
 
     void onConnectionRecovery() override;
 };
-
 
 
 #endif //CTRTC_TRTCCALLBACKIMPL_H

@@ -21,81 +21,81 @@
 TrtcCallbackImpl::TrtcCallbackImpl(const CTrtcCloudCallback *callback) : callback(callback) {}
 
 TrtcCallbackImpl::~TrtcCallbackImpl() {
-    callback= nullptr;
+    callback = nullptr;
 }
 
 void TrtcCallbackImpl::onError(TXLiteAVError errCode, const char *errMsg, void *extraInfo) {
-    if(callback== nullptr||callback->onError== nullptr){
+    if (callback == nullptr || callback->onError == nullptr) {
         return;
     }
-    callback->onError(callback->ctx,errCode,errMsg,extraInfo);
+    callback->onError(callback->ctx, errCode, errMsg, extraInfo);
 }
 
 void TrtcCallbackImpl::onWarning(TXLiteAVWarning warningCode, const char *warningMsg, void *extraInfo) {
-    if(callback== nullptr||callback->onWarning== nullptr){
+    if (callback == nullptr || callback->onWarning == nullptr) {
         return;
     }
-    callback->onWarning(callback->ctx,warningCode,warningMsg,extraInfo);
+    callback->onWarning(callback->ctx, warningCode, warningMsg, extraInfo);
 }
 
 void TrtcCallbackImpl::onEnterRoom(int result) {
-    if(callback== nullptr||callback->onEnterRoom== nullptr){
+    if (callback == nullptr || callback->onEnterRoom == nullptr) {
         return;
     }
-    callback->onEnterRoom(callback->ctx,result);
+    callback->onEnterRoom(callback->ctx, result);
 }
 
 void TrtcCallbackImpl::onExitRoom(int reason) {
-    if(callback== nullptr||callback->onExitRoom== nullptr){
+    if (callback == nullptr || callback->onExitRoom == nullptr) {
         return;
     }
-    callback->onExitRoom(callback->ctx,reason);
+    callback->onExitRoom(callback->ctx, reason);
 }
 
 void TrtcCallbackImpl::onRemoteUserEnterRoom(const char *userId) {
-    if(callback== nullptr||callback->onRemoteUserEnterRoom== nullptr){
+    if (callback == nullptr || callback->onRemoteUserEnterRoom == nullptr) {
         return;
     }
-    callback->onRemoteUserEnterRoom(callback->ctx,userId);
+    callback->onRemoteUserEnterRoom(callback->ctx, userId);
 }
 
 void TrtcCallbackImpl::onRemoteUserLeaveRoom(const char *userId, int reason) {
-    if(callback== nullptr||callback->onRemoteUserLeaveRoom== nullptr){
+    if (callback == nullptr || callback->onRemoteUserLeaveRoom == nullptr) {
         return;
     }
-    callback->onRemoteUserLeaveRoom(callback->ctx,userId,reason);
+    callback->onRemoteUserLeaveRoom(callback->ctx, userId, reason);
 }
 
 void TrtcCallbackImpl::onSendFirstLocalVideoFrame(const TRTCVideoStreamType streamType) {
-    if(callback== nullptr||callback->onSendFirstLocalVideoFrame== nullptr){
+    if (callback == nullptr || callback->onSendFirstLocalVideoFrame == nullptr) {
         return;
     }
-    callback->onSendFirstLocalVideoFrame(callback->ctx,streamType);
+    callback->onSendFirstLocalVideoFrame(callback->ctx, streamType);
 }
 
 void TrtcCallbackImpl::onSendFirstLocalAudioFrame() {
-    if(callback== nullptr||callback->onSendFirstLocalAudioFrame== nullptr){
+    if (callback == nullptr || callback->onSendFirstLocalAudioFrame == nullptr) {
         return;
     }
     callback->onSendFirstLocalAudioFrame(callback->ctx);
 }
 
 void TrtcCallbackImpl::onConnectionLost() {
-    if(callback== nullptr||callback->onConnectionLost== nullptr){
+    if (callback == nullptr || callback->onConnectionLost == nullptr) {
         return;
     }
     callback->onConnectionLost(callback->ctx);
 }
 
 void TrtcCallbackImpl::onTryToReconnect() {
-    if(callback== nullptr||callback->onTryToReconnect== nullptr){
+    if (callback == nullptr || callback->onTryToReconnect == nullptr) {
         return;
     }
     callback->onTryToReconnect(callback->ctx);
 }
 
 void TrtcCallbackImpl::onConnectionRecovery() {
-    if(callback== nullptr||callback->onConnectionRecovery== nullptr){
+    if (callback == nullptr || callback->onConnectionRecovery == nullptr) {
         return;
     }
     callback->onConnectionRecovery(callback->ctx);

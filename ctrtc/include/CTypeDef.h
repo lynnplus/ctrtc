@@ -20,7 +20,7 @@
 
 
 #ifdef __cplusplus
-extern "C"{
+extern "C" {
 #endif
 
 #include <stdint.h>
@@ -36,39 +36,39 @@ extern "C"{
 typedef enum {
     TRTCRoleAnchor = 20,
     TRTCRoleAudience = 21,
-}CTRTCRoleType;
+} CTRTCRoleType;
 
 typedef enum {
     TRTCAppSceneVideoCall = 0,
     TRTCAppSceneLIVE = 1,
     TRTCAppSceneAudioCall = 2,
     TRTCAppSceneVoiceChatRoom = 3,
-}CTRTCAppScene;
+} CTRTCAppScene;
 
-typedef enum  {
+typedef enum {
     TRTCVideoStreamTypeBig = 0,
     TRTCVideoStreamTypeSmall = 1,
     TRTCVideoStreamTypeSub = 2,
-}CTRTCVideoStreamType;
+} CTRTCVideoStreamType;
 
-typedef enum  {
+typedef enum {
     TRTCVideoBufferType_Unknown = 0,
     TRTCVideoBufferType_Buffer = 1,
     TRTCVideoBufferType_Texture = 3,
 
-}CTRTCVideoBufferType;
+} CTRTCVideoBufferType;
 
-typedef enum  {
+typedef enum {
     TRTCVideoRotation0 = 0,
     TRTCVideoRotation90 = 1,
     TRTCVideoRotation180 = 2,
     TRTCVideoRotation270 = 3,
-}CTRTCVideoRotation;
+} CTRTCVideoRotation;
 
-typedef enum  {
+typedef enum {
     TRTCVideoResolutionModeLandscape = 0,
     TRTCVideoResolutionModePortrait = 1,
-}CTRTCVideoResolutionMode;
+} CTRTCVideoResolutionMode;
 
 typedef enum {
     TRTCLogLevelVerbose = 0,
@@ -78,7 +78,7 @@ typedef enum {
     TRTCLogLevelError = 4,
     TRTCLogLevelFatal = 5,
     TRTCLogLevelNone = 6,
-}CTRTCLogLevel;
+} CTRTCLogLevel;
 
 
 typedef struct {
@@ -99,7 +99,7 @@ typedef struct {
     const char *privateMapKey;
 
     const char *businessInfo;
-}CTRTCParams;
+} CTRTCParams;
 
 typedef struct {
     int videoResolution;
@@ -108,7 +108,7 @@ typedef struct {
     uint32_t videoBitrate;
     uint32_t minVideoBitrate;
     bool enableAdjustRes;
-}CTRTCVideoEncParam;
+} CTRTCVideoEncParam;
 
 #ifdef __cplusplus
 }

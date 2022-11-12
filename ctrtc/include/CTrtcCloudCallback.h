@@ -18,32 +18,31 @@
 #define CTRTC_CTRTCCLOUDCALLBACK_H
 
 
-
 #include "CTypeDef.h"
 
 #ifdef __cplusplus
-extern "C"{
+extern "C" {
 #endif
 
-typedef void(*TrtcCBErrorFunc) (void* ctx,int errCode, const char *errMsg, void *extraInfo);
-typedef void(*TrtcCBWarnFunc) (void* ctx,int warningCode, const char *warningMsg, void *extraInfo);
-typedef void(*TrtcCBEnterRoomFunc) (void* ctx,int result);
-typedef void(*TrtcCBExitRoomFunc) (void* ctx,int reason);
-typedef void(*TrtcCBRemoteUserEnterRoomFunc) (void* ctx,const char *userId);
-typedef void(*TrtcCBRemoteUserLeaveRoomFunc) (void* ctx,const char *userId,int reason);
-typedef void(*TrtcCBSendFirstLocalVideoFrameFunc) (void* ctx,int streamType);
-typedef void(*TrtcCBSendFirstLocalAudioFrameFunc) (void* ctx);
+typedef void(*TrtcCBErrorFunc)(void *ctx, int errCode, const char *errMsg, void *extraInfo);
+typedef void(*TrtcCBWarnFunc)(void *ctx, int warningCode, const char *warningMsg, void *extraInfo);
+typedef void(*TrtcCBEnterRoomFunc)(void *ctx, int result);
+typedef void(*TrtcCBExitRoomFunc)(void *ctx, int reason);
+typedef void(*TrtcCBRemoteUserEnterRoomFunc)(void *ctx, const char *userId);
+typedef void(*TrtcCBRemoteUserLeaveRoomFunc)(void *ctx, const char *userId, int reason);
+typedef void(*TrtcCBSendFirstLocalVideoFrameFunc)(void *ctx, int streamType);
+typedef void(*TrtcCBSendFirstLocalAudioFrameFunc)(void *ctx);
 
-typedef void(*TrtcCBConnectionLostFunc) (void* ctx);
-typedef void(*TrtcCBTryToReconnectFunc) (void* ctx);
-typedef void(*TrtcCBConnectionRecoveryFunc) (void* ctx);
+typedef void(*TrtcCBConnectionLostFunc)(void *ctx);
+typedef void(*TrtcCBTryToReconnectFunc)(void *ctx);
+typedef void(*TrtcCBConnectionRecoveryFunc)(void *ctx);
 
-typedef void(*TrtcLogCallbackFunc)(void* ctx,const char* log, CTRTCLogLevel level, const char* module);
+typedef void(*TrtcLogCallbackFunc)(void *ctx, const char *log, CTRTCLogLevel level, const char *module);
 
 
 typedef struct {
-    void* ctx;
-    void* proxy;
+    void *ctx;
+    void *proxy;
     TrtcCBErrorFunc onError;
     TrtcCBWarnFunc onWarning;
     TrtcCBEnterRoomFunc onEnterRoom;
@@ -56,10 +55,10 @@ typedef struct {
     TrtcCBTryToReconnectFunc onTryToReconnect;
     TrtcCBConnectionRecoveryFunc onConnectionRecovery;
 
-}CTrtcCloudCallback;
+} CTrtcCloudCallback;
 
-API CTrtcCloudCallback* createTrtcCallback(void* ctx);
-API void destroyTrtcCallback(CTrtcCloudCallback* cb);
+API CTrtcCloudCallback *createTrtcCallback(void *ctx);
+API void destroyTrtcCallback(CTrtcCloudCallback *cb);
 
 #ifdef __cplusplus
 }
